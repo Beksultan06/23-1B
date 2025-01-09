@@ -3,7 +3,7 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 import sqlite3
 
-from lessons6.db import DATABASE_PATH, init_db
+from db import DATABASE_PATH, init_db
 
 router = Router()
 
