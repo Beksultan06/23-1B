@@ -16,10 +16,11 @@ async def schedule_task(deadline_time):
         await bot.send_message(student_data['chat_id'], "Эта задание уже должно быть выполнена")
     else:
         await asyncio.sleep(delta)
-        await task_to_perform
+        await task_to_perform()
 
 async def task_to_perform():
     try:
         chat_id = student_data['chat_id']
+        await bot.send_message(chat_id, f"Задание для {student_data['name']} выполнена")
     except Exception as e:
         logging.error(f"Ошибка: {e}")

@@ -7,6 +7,6 @@ router = Router()
 
 @router.message(Command("start"))
 async def start(message:types.Message, state:FSMContext):
-    student_data['chat_id'] = message.text
+    student_data['chat_id'] = message.chat.id
     await message.answer("Привет я бот для учате ваших занятий. Напишите свое имя!")
     await state.set_state(Student.name)
